@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Heroi } from '../herois'
+import { HEROIS } from '../mock-herois';
+import { Heroi } from '../herois';
 @Component({
   selector: 'app-herois',
   templateUrl: './herois.component.html',
@@ -7,13 +8,18 @@ import { Heroi } from '../herois'
 })
 export class HeroisComponent implements OnInit {
 
-  heroi: Heroi = {
-    id: 1,
-    nome: 'Super Man'
-  }
-  
-  constructor() { }
+  herois = HEROIS;
 
+  //Atributo que será exibido ao ser clicado
+  heroiSelecionado: Heroi;
+
+  //Método que atribui a variavel "heroiSelecionado" o valor passado a "heroi"
+  onSelect(heroi : Heroi): void {
+    this.heroiSelecionado = heroi;
+  }
+
+  constructor() { }
+ 
   ngOnInit() {
   }
 
