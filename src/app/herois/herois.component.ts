@@ -11,7 +11,7 @@ export class HeroisComponent implements OnInit {
   herois = HEROIS;
 
   //Atributo que será exibido ao ser clicado
-  heroiSelecionado: Heroi;
+  heroiSelecionado: Heroi; //Definindo o atributo heroiSelecionado que será do tipo Heroi
 
   //Método que atribui a variavel "heroiSelecionado" o valor passado a "heroi"
   onSelect(heroi : Heroi): void {

@@ -1,0 +1,14 @@
+<!-- Componente Pai -->
+
+<!-- heroiSelecionado inicialmente é undefined e só recebe um valor após ser clicado -->
+<div *ngIf="heroi"> <!-- Essa div só é apresentada se o elemento heroiSelecionado não for mais undefined -->
+    <h2>Detalhes do {{heroi.nome | uppercase}}</h2>
+    <div>
+      <span>id:</span>{{heroi.id}}
+    </div>
+    <div>
+      <label>Nome:
+        <input [(ngModel)] ="heroi.nome" placeholder="nome">
+      </label>
+    </div>
+</div>

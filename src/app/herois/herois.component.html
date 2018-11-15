@@ -1,10 +1,29 @@
+<!-- Componente Pai -->
+
 <h2>Meus Herois</h2>
 <ul class="herois">
-  <li *ngFor="let heroi of herois" (click)="onSelect(heroi)">
+  <li *ngFor="let heroi of herois" [class.selected]="heroi===heroiSelecionado" (click)="onSelect(heroi)">
     <span class="badge"> {{heroi.id}} </span> {{heroi.nome}}
   </li>
 </ul>
-<div *ngIf="heroiSelecionado">
+
+<!-- Conecta a propriedade heroiSelecionado do component pai a
+      propriedade heroi do component filho -->
+<app-heroi-detalhe [heroi]="heroiSelecionado"></app-heroi-detalhe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngIf="heroiSelecionado">  
     <h2>Detalhes do {{heroiSelecionado.nome | uppercase}}</h2>
     <div>
       <span>id:</span>{{heroiSelecionado.id}}
@@ -14,5 +33,5 @@
         <input [(ngModel)] ="heroiSelecionado.nome" placeholder="nome">
       </label>
     </div>
-</div>
+</div> -->
 
