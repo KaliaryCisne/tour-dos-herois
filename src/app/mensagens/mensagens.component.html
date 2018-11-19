@@ -1,0 +1,8 @@
+<!-- Este template está diretamente ligado a propriedade mensagemService deste componente -->
+<!-- *ngIf  => Somente exibe esta tela de mensagens se existirem mensagens para exibir -->
+<div *ngIf="mensagemService.mensagens.length">
+  <h2>Mensagens</h2>
+  <button class="limpar" (click)="mensagemService.limpar()">Limpar</button>
+  <p></p>
+  <div *ngFor="let mensagem of mensagemService.mensagens">{{mensagem}}></div>
+</div>
