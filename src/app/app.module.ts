@@ -7,13 +7,15 @@ import { HeroisComponent } from './herois/herois.component';
 import { HeroiDetalheComponent } from './heroi-detalhe/heroi-detalhe.component';
 import { MensagensComponent } from './mensagens/mensagens.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PainelComponent } from './painel/painel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroisComponent,
     HeroiDetalheComponent,
-    MensagensComponent
+    MensagensComponent,
+    PainelComponent
   ],
   imports: [
     BrowserModule,
