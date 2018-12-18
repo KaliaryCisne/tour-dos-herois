@@ -17,11 +17,6 @@ export class HeroisComponent implements OnInit {
   onSelect(heroi : Heroi): void {
     this.heroiSelecionado = heroi;
   }
-
-  //funcão que obtem os herois através da classe heroiService e é recebida pelo atributo herois
-  // getHerois(): void {
-  //  this.herois = this.heroiService.getHerois();                //PRIMEIRA VERSAO
-  // }
   getHerois(): void {
     this.heroiService.getHerois()                                 //SEGUNDA VERSAO
       .subscribe(herois => this.herois = herois);

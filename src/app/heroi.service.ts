@@ -9,19 +9,16 @@ import { MensagemService } from './mensagem.service';
   providedIn: 'root'
 })
 export class HeroiService {
-
-  // getHerois(): Heroi[] {
-  //   return HEROIS;                                                     //PRIMEIRA VERSAO
-  // }
-
+  //Injentado o serviço MensagemService no construtor do servico HeroiService
+  constructor(private mensagemService: MensagemService) {}
+  
   getHerois(): Observable<Heroi[]>{                                       //SEGUNDA VERSAO   
     this.mensagemService.adicionar('HeroiService: heróis obtidos');
     return of(HEROIS);
   }
 
-  //Injentado o serviço MensagemService no construtor do servico HeroiService
-  constructor(private mensagemService: MensagemService) {
-    
-  }
-
+  getHeroi(id: number): Observable<Heroi> {
+    this.mensagemService.adicionar(`HeroiService: obtido herói com id=${id}`);
+    return of(HEROIS.find(heroi => heroi.id === id));
+    }
 }
